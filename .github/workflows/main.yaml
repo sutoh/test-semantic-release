@@ -18,6 +18,8 @@ jobs:
 
     - name: Python Semantic Release
       run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
           python -m pip install python-semantic-release
           semantic-release version
           semantic-release changelog --post
