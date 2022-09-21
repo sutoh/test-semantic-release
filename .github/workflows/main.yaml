@@ -18,6 +18,7 @@ jobs:
 
     - name: Python Semantic Release
       run: |
+          export GH_TOKEN=${{ secrets.GH_TOKEN }}
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           python -m pip install python-semantic-release
