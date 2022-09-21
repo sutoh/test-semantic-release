@@ -10,12 +10,14 @@ jobs:
     name: Semantic Release
     runs-on: ubuntu-latest
     concurrency: push
+    environment:
+      name: release
 
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-
+    
     - name: Python Semantic Release
       run: |
           export GH_TOKEN=${{ secrets.GH_TOKEN }}
